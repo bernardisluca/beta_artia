@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %> </p>
+
+<div class="card col-6">
+  <div class="card-header">
+    <h1 class="fw-bold">
+      Atividade 
+    </h1> 
+  </div>
+  
+  <div class="card-body">
+      <strong>Nome:</strong>
+      <%= @activity.name %>
+      <br>
+      
+      <strong>Data inicial:</strong>
+      <%= @activity.date_start.strftime('%d/%m/%Y') %>
+      <br>
+
+    
+      <strong>Data Final:</strong>
+      <%= @activity.date_end.strftime('%d/%m/%Y') %>
+      <br>
+
+    
+      <strong>Nome do Projeto:</strong>
+      <%= @activity.project.title %>
+      <br>
+
+    
+      <strong>Finalizado:</strong>
+      <%= @activity.finished %>
+  </div>
+  <div class="card-footer">
+    <%= link_to 'Editar', edit_activity_path(@activity) %> |
+    <%= link_to 'Voltar', activities_path %>
+  </div>
+</div>

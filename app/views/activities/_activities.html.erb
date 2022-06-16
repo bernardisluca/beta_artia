@@ -1,0 +1,56 @@
+<div class="col-6">
+  <div class="card">
+    <div class="card-header">
+      <h1>Atividades</h1>
+    </div>
+
+    <div class="card-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Data de início</th>
+            <th>Data final</th>
+            <th>Status</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% activities.each do |activity| %>
+            <tr>
+              <td><%= activity.name %></td>
+              <td><%= activity.date_start.strftime('%d/%m/%Y') %></td>
+              <td><%= activity.date_end.strftime('%d/%m/%Y') %></td>
+              <td><%= set_finished(activity.finished) %></td>
+              <td>
+                <%= link_to activity do %>
+                  <div class="fa fa-eye" title="Exibir"> </div>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to edit_activity_path(activity) do %>
+                  <div class="fa fa-square-pen text-info" title="Editar"> </div>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to activity, method: :delete, data: { confirm: 'Você tem certeza que deseja apagar a atividade selecionada?' } do %>
+                  <div class="fa fa-window-close text-danger" title="Apagar"> </div>
+                <% end %>
+              </td>
+              <td>
+                <%= link_to activity_change_status_path(activity.id, origin: origin), method: :patch do %>
+                  <div class="fa fa-right-left" title="Alterar estado"> </div>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-footer">
+      <%= link_to 'Nova Atividade', new_activity_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>

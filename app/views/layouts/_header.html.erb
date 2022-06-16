@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid me-5 ms-5">
+    <a class="navbar-brand" href="/">
+      <div class="fa fa-brands fa-atlassian"></div>
+      Artia -b-
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to projects_path, class: 'nav-link' do %>
+            <div class="fa fa-layer-group text-info"> </div> 
+            Projetos 
+          <% end %> 
+        </li>
+        <% if @exists_project %>
+          <li class="nav-item">
+            <%= link_to 'Atividades', activities_path, class: 'nav-link' %>   
+          </li>
+        <% end %>
+      </ul>
+      <%= form_tag projects_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :title, params[:title], placeholder: 'Ex: Projeto X', class: 'form-control me-2' %>
+        <%= button_tag 'Pesquisar', class: 'btn btn-outline-success', type: 'submit' %>
+      <% end %>
+    </div>
+  </div>
+</nav>

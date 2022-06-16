@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<div class="col-6">
+  <div class="card">
+    <div class="card-header">
+      <h1 class="fw-bold">
+        Projeto 
+      </h1>
+    </div>
+
+
+    <div class="card-body">
+      <strong>Título:</strong>
+      <%= @project.title %>
+      <br>
+
+      <strong>Descrição:</strong>
+      <%= @project.description %>
+      <br>
+
+      <strong>Data de Início:</strong>
+      <%= @project.date_start.strftime('%d/%m/%Y') %>
+      <br>
+
+      <strong>Data Final:</strong>
+      <%= @project.date_end.strftime('%d/%m/%Y') %>
+      <br>
+
+      <strong>Atrasado?:</strong>
+      <%= set_is_late(@project.is_late) %>
+      <br>
+
+      <strong>% de Completo:</strong>
+      <div class="progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: <%= @project.percentage_complete %>%" aria-valuemin="0" aria-valuemax="100"> 
+          <%= @project.percentage_complete.to_i %>%
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+<br>
+
+<%= render 'activities/activities', activities: @project.activities, origin: 'project' %>
+<%= link_to 'Editar', edit_project_path(@project) %> |
+<%= link_to 'Voltar', projects_path %>
