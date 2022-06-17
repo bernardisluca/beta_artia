@@ -1,6 +1,6 @@
-<strong>Bem vindo ao Artia beta </strong>
+<strong>Bem-vindo ao Artia beta </strong>
 
-- Aqui o usuário pode cadastrar seus projetos e dentro de cada projeto cadastrar o número que desejar de atividade.
+- Aqui o usuário pode cadastrar seus projetos e dentro de cada projeto cadastrar o número que desejar de atividades.
 - Os Projetos são cadastrados com: Título, Data de Início, Data Final e Descrição (sendo todos os campos obrigatórios)
 - As Atividades são cadastradas com: Nome, Data de Início, Data Final e o usuário deve selecionar o Projeto a qual aquela atividade pertence.
 
