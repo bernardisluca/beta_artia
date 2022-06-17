@@ -5,11 +5,12 @@
     <div class="container-fluid py-5">
       <h2>
         <div class="fa fa-face-sad-tear text-info"></div>
-        Não foi encontrado nenhum projeto
-      </h2>
+        Não foi encontrado nenhum projeto 
+      </h2> 
+      <%= link_to 'Novo Projeto', new_project_path, class: 'btn btn-outline-info text-info' %>
     </div>
   </div>
-<% else %>
+<% else %> 
   <div class="col-6">
     <div class="card">
       <div class="card-header">
@@ -48,7 +49,7 @@
       </div>
     </div>
   </div>
-<% end %>
+<% end %> 
 
 
 
